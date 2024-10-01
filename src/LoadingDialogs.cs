@@ -1,77 +1,83 @@
 using System;
 
-// v1.0
-/*
- * To use:
- *  - Download LoadingDialogs.cs
- *  - Add the downloaded file to
- *    the directory of your C#
- *    Console App.
- *  - Simply add using LoadingDialogs;
- *    at the top of your C# file
- *    and you're ready to start
- *    loading!
- * Note:
- *  - Once a loading dialog's
- *    percentage is set to 100
- *    (or above) it is no longer
- *    usable.
- */
-namespace LoadingDialogs
-{
-	public class LoadingDialog
-	{
-		string message;
-		int percentage = 0;
+namespace LoadingDialogs {
+	public class LoadingDialog {
+		public string message;    // the loading bar description
+		public int progress = 0;  // the current progress
+		public int totalProgress; // the number of steps to complete
+		public int barWidth;      // the width of the loading bar
+		private int cursorTop;    // the position of the loading bar
 
-		public LoadingDialog(string message)
-		{
+		public ConsoleColor completeColour = ConsoleColor.Green;  // the color of the completed part of the loading bar
+		public ConsoleColor incompleteColour = ConsoleColor.Gray; // the color of the incomplete part of the loading bar
+
+		public LoadingDialog(string message = "Loading...", int totalProgress = 10, int barWidth = 20) {
 			this.message = message;
+			this.totalProgress = totalProgress;
+			this.barWidth = barWidth;
 		}
 
-		public void SetPercentage(int percent)
-		{
-			this.percentage = percent;
-		}
-
-		public void Create()
-		{
-			Console.ResetColor();
-			Console.WriteLine(this.message);
-			// ' ' * 20 + " 0%"
-			//Console.BackgroundColor = ConsoleColor.Gray;
-			//Console.Write("                    ");
-			//Console.ResetColor();
-			//Console.Write(" 0%");
+		/*
+		 * Set the progress of the loading bar.
+		 */
+		public void SetProgress(int progress) {
+			this.progress = progress;
 			this.Update();
 		}
 
-		public void Update()
-		{
+		/*
+		 * Increment the progress of the loading
+		 * bar by one step.
+		 */
+		public void IncrementProgress() {
+			this.progress++;
+			this.Update();
+		}
+
+		/*
+		 * Start the loading bar.
+		 */
+		public void Start() {
+			// write the initial message
 			Console.ResetColor();
-			Console.SetCursorPosition(0, Console.CursorTop);
-			for (int i = 1; i < 20; i++)
-			{
-				if (i <= Math.Floor((decimal)percentage / 5))
-				{
-					Console.BackgroundColor = ConsoleColor.Green;
-				}
-				else
-				{
-					Console.BackgroundColor = ConsoleColor.Gray;
-				}
-				Console.Write(" ");
-			}
-			//Console.SetCursorPosition((int)Math.Floor((decimal)percentage / 5), Console.CursorTop);
-			//Console.BackgroundColor = ConsoleColor.Green;
-			//Console.Write(" ");
-			//Console.SetCursorPosition(20, Console.CursorTop);
+			Console.WriteLine(this.message);
+
+			// store the cursor position
+			cursorTop = Console.CursorTop;
+			
+			// create the loading bar
+			Console.BackgroundColor = this.incompleteColour;
+			Console.Write(new string(' ', this.barWidth));
 			Console.ResetColor();
-			Console.Write(" " + this.percentage + "%");
-			if (this.percentage == 100)
-			{
-				Console.Write("\n");
-			}
+			Console.Write(" 0%\n");
+		}
+
+		/*
+		 * Update the loading bar.
+		 */
+		public void Update() {
+			// remember the current cursor position
+			int currentCursorLeft = Console.CursorLeft;
+			int currentCursorTop = Console.CursorTop;
+
+			// move cursor to the position of the current percentage
+			Console.ResetColor();
+			Console.SetCursorPosition(0, this.cursorTop);
+
+			// calculate the current progress
+			float currentProgress = (float)this.progress / this.totalProgress;
+			
+			// write the current progress
+			Console.BackgroundColor = this.completeColour;
+			Console.Write(new string(' ', (int)Math.Floor(currentProgress * barWidth)));
+
+			// write the percentage completed
+			Console.SetCursorPosition(this.barWidth, Console.CursorTop);
+			Console.ResetColor();
+			Console.Write(" {0}%", Math.Round(currentProgress * 100, 2));
+
+			// restore the cursor position
+			Console.SetCursorPosition(currentCursorLeft, currentCursorTop);
 		}
 	}
 }
