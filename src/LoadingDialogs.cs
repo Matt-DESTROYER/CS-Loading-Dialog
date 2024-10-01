@@ -19,50 +19,59 @@ using System;
  */
 namespace LoadingDialogs
 {
-    public class LoadingDialog
-    {
-        string message;
-        int percentage = 0;
+	public class LoadingDialog
+	{
+		string message;
+		int percentage = 0;
 
-        public LoadingDialog(string message)
-        {
-            this.message = message;
-        }
+		public LoadingDialog(string message)
+		{
+			this.message = message;
+		}
 
-        public void SetPercentage(int percent)
-        {
-            this.percentage = percent;
-        }
+		public void SetPercentage(int percent)
+		{
+			this.percentage = percent;
+		}
 
-        public void Create()
-        {
-            Console.ResetColor();
-            Console.WriteLine(this.message);
-            this.Update();
-        }
+		public void Create()
+		{
+			Console.ResetColor();
+			Console.WriteLine(this.message);
+			// ' ' * 20 + " 0%"
+			//Console.BackgroundColor = ConsoleColor.Gray;
+			//Console.Write("                    ");
+			//Console.ResetColor();
+			//Console.Write(" 0%");
+			this.Update();
+		}
 
-        public void Update()
-        {
-            Console.ResetColor();
-            Console.Write("\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b");
-            for (int i = 1; i < 20; i++)
-            {
-                if (i <= Math.Floor((decimal)percentage / 5))
-                {
-                    Console.BackgroundColor = ConsoleColor.Green;
-                }
-                else
-                {
-                    Console.BackgroundColor = ConsoleColor.Gray;
-                }
-                Console.Write(" ");
-            }
-            Console.ResetColor();
-            Console.Write(" " + this.percentage + "%");
-            if (this.percentage == 100)
-            {
-                Console.Write("\n");
-            }
-        }
-    }
+		public void Update()
+		{
+			Console.ResetColor();
+			Console.SetCursorPosition(0, Console.CursorTop);
+			for (int i = 1; i < 20; i++)
+			{
+				if (i <= Math.Floor((decimal)percentage / 5))
+				{
+					Console.BackgroundColor = ConsoleColor.Green;
+				}
+				else
+				{
+					Console.BackgroundColor = ConsoleColor.Gray;
+				}
+				Console.Write(" ");
+			}
+			//Console.SetCursorPosition((int)Math.Floor((decimal)percentage / 5), Console.CursorTop);
+			//Console.BackgroundColor = ConsoleColor.Green;
+			//Console.Write(" ");
+			//Console.SetCursorPosition(20, Console.CursorTop);
+			Console.ResetColor();
+			Console.Write(" " + this.percentage + "%");
+			if (this.percentage == 100)
+			{
+				Console.Write("\n");
+			}
+		}
+	}
 }
