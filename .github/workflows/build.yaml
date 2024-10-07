@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  Windows-Build:
+  Build:
     runs-on: ${{ matrix.os }}
 
     strategy:
