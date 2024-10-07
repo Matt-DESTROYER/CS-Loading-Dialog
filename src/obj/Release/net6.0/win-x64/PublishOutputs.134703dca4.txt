@@ -1,0 +1,2 @@
+D:\a\CS-Loading-Dialog\CS-Loading-Dialog\build\LoadingDialogs.pdb
+D:\a\CS-Loading-Dialog\CS-Loading-Dialog\build\LoadingDialogs.exe
