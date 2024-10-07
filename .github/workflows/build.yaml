@@ -5,6 +5,10 @@ on:
     branches:
       - main
 
+defaults:
+  run:
+    shell: bash
+
 jobs:
   Build:
     runs-on: ${{ matrix.os }}
@@ -24,8 +28,7 @@ jobs:
     - name: Build
       run: |
         cd src
-        build.bat
-      shell: cmd
+        sh build.sh
 
     - name: Push build
       run: |
@@ -36,4 +39,3 @@ jobs:
         git push origin main
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      shell: bash
