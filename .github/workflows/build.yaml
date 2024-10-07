@@ -14,8 +14,9 @@ jobs:
     - uses: yoavain/Setup-CSC@v7
 
     - name: Build
-      run: cd src |
-        build.bat
+      run: |
+        cd src
+        call build.bat
 
     - name: Push build
       run: |
