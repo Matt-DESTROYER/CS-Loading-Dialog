@@ -29,3 +29,9 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       shell: bash
+
+    - name: Test demo
+      run: |
+        cd build
+        demo.exe
+      shell: cmd
