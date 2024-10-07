@@ -23,4 +23,4 @@ if [ ! -d "../build" ]; then
     mkdir ../build
 fi
 
-dotnet publish ~/LoadingDialogs.csproj --os $PLATFORM --arch $ARCH -c Release --disable-build-servers --output ../build
+dotnet publish /LoadingDialogs.csproj --os $PLATFORM --arch $ARCH -c Release --disable-build-servers --output ../build
