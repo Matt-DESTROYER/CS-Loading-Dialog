@@ -16,7 +16,8 @@ jobs:
     - name: Build
       run: |
         cd src
-        call build.bat
+        build.bat
+      shell: cmd
 
     - name: Push build
       run: |
