@@ -9,12 +9,12 @@ Just download the `LoadingDialogs.cs` file and include the `LoadingDialog` names
 ```cs
 LoadingDialog myLoadingBar = LoadingDialog(string message = "Loading...", int totalProgress = 10, int barWidth = 20);
 ```
-Parameters:
+#### Parameters:
  - `message`: The description of your loading bar (this will be displayed above the loading bar).
  - `totalProgress`: How many tasks or items are being completed (this will be used to calculate a percentage based on current progress).
  - `barWidth`: The width of the loading bar in characters.
 
-Properties:
+#### Properties:
 ```cs
 public string message;
 public int progress = 0;
@@ -29,6 +29,20 @@ public ConsoleColor incompleteColour = ConsoleColor.Gray;
  - `barWidth`: The width of the loading bar in characters.
  - `completeColor`: The colour of the complete section of the loading bar.
  - `incompleteColor`: The colour of the incomplete section of the loading bar.
+
+#### Methods:
+```cs
+public LoadingDialog SetProgress(int progress);
+public LoadingDialog IncrementProgress();
+public LoadingDialog Start();
+public LoadingDialog Update();
+```
+ > All methods with return type `LoadingDialog` are chainable.
+
+ - `SetProgress`: Set's the progress out of the `totalProgress` of the loading bar.
+ - `IncrementProgress`: Increment the progress of the loading bar by one (useful for when an individual task completes).
+ - `Start`: Initialises and displays the loading bar.
+ - `Update`: Updates the loading bar based on changes (automatically called by `SetProgress` and `IncrementProgress`, you should call this if you are manually changing properties rather than calling these methods).
 
 ## Demo
 ```cs

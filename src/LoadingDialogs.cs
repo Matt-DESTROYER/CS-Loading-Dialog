@@ -20,24 +20,28 @@ namespace LoadingDialogs {
 		/*
 		 * Set the progress of the loading bar.
 		 */
-		public void SetProgress(int progress) {
+		public LoadingDialog SetProgress(int progress) {
 			this.progress = progress;
 			this.Update();
+
+			return this;
 		}
 
 		/*
 		 * Increment the progress of the loading
 		 * bar by one step.
 		 */
-		public void IncrementProgress() {
+		public LoadingDialog IncrementProgress() {
 			this.progress++;
 			this.Update();
+
+			return this;
 		}
 
 		/*
 		 * Start the loading bar.
 		 */
-		public void Start() {
+		public LoadingDialog Start() {
 			// write the initial message
 			Console.ResetColor();
 			Console.WriteLine(this.message);
@@ -50,12 +54,14 @@ namespace LoadingDialogs {
 			Console.Write(new string(' ', this.barWidth));
 			Console.ResetColor();
 			Console.Write(" 0%\n");
+
+			return this;
 		}
 
 		/*
 		 * Update the loading bar.
 		 */
-		public void Update() {
+		public LoadingDialog Update() {
 			// remember the current cursor position
 			int currentCursorLeft = Console.CursorLeft;
 			int currentCursorTop = Console.CursorTop;
@@ -78,6 +84,8 @@ namespace LoadingDialogs {
 
 			// restore the cursor position
 			Console.SetCursorPosition(currentCursorLeft, currentCursorTop);
+
+			return this;
 		}
 	}
 }
