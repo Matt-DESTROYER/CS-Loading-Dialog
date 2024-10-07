@@ -28,7 +28,7 @@ jobs:
     - name: Build
       run: |
         cd src
-        sh build.sh
+        ./build.sh
 
     - name: Push build
       run: |
