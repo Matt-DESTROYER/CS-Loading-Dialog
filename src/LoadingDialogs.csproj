@@ -10,9 +10,4 @@
     <SelfContained>true</SelfContained>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Using Include="System" />
-    <Using Include="System.Threading" />
-  </ItemGroup>
-
 </Project>
