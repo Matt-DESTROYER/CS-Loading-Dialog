@@ -6,12 +6,20 @@ on:
       - main
 
 jobs:
-  build:
-    runs-on: windows-latest
+  Windows-Build:
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      fail-fast: false
+      max-parallel: 1
+
+      matrix:
+        os: [windows-latest, ubuntu-latest]
 
     steps:
     - uses: actions/checkout@v4
-    - uses: yoavain/Setup-CSC@v7
+    - uses: actions/setup-dotnet@v4.0.1
+            
 
     - name: Build
       run: |

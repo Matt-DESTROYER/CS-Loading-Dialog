@@ -2,11 +2,11 @@ using System;
 
 namespace LoadingDialogs {
 	public class LoadingDialog {
-		public string message;    // the loading bar description
-		public int progress = 0;  // the current progress
-		public int totalProgress; // the number of steps to complete
-		public int barWidth;      // the width of the loading bar
-		private int cursorTop;    // the position of the loading bar
+		public  string message       = ""; // the loading bar description
+		public  int    progress      =  0; // the current progress
+		public  int    totalProgress =  0; // the number of steps to complete
+		public  int    barWidth      = 20; // the width of the loading bar
+		private int    cursorTop;          // the position of the loading bar
 
 		public ConsoleColor completeColour = ConsoleColor.Green;  // the color of the completed part of the loading bar
 		public ConsoleColor incompleteColour = ConsoleColor.Gray; // the color of the incomplete part of the loading bar
