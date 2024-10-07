@@ -8,6 +8,7 @@ on:
 defaults:
   run:
     shell: bash
+    working-directory: ./src
 
 jobs:
   Build:
@@ -26,9 +27,7 @@ jobs:
             
 
     - name: Build
-      run: |
-        cd src
-        sh build.sh
+      run: sh build.sh
 
     - name: Push build
       run: |
