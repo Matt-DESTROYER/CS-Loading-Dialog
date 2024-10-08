@@ -1,15 +1,13 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <OutputType>Exe</OutputType>
+    <OutputType>Library</OutputType>
     <TargetFramework>net8.0</TargetFramework>
-    <PublishAot>true</PublishAot>
   </PropertyGroup>
-  
-  <!-- Don't include debug content (`.pbd`) for Release builds -->
-  <PropertyGroup Condition="'$(Configuration)'=='Release'">
-    <DebugSymbols>False</DebugSymbols>
-    <DebugType>None</DebugType>
-  </PropertyGroup>
+
+  <!-- don't include the demo in the library build -->
+  <ItemGroup>
+    <Compile Remove="demo.cs" />
+  </ItemGroup>
 
 </Project>
