@@ -23,5 +23,6 @@ if [ ! -d "../build" ]; then
     mkdir ../build
 fi
 
-dotnet publish --os $PLATFORM --arch $ARCH -c Release --disable-build-servers --output ../build
-dotnet clean
+dotnet publish --os $PLATFORM --arch $ARCH -c Release --disable-build-servers --output ../build/$RUNNER_OS-$ARCH
+rm -rf bin
+rm -rf obj
