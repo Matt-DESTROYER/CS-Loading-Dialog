@@ -18,7 +18,7 @@ else
 		RUNNER_OS="Windows"
 		PLATFORM="win"
 	elif [[ $OSTYPE == "darwin" ]]; then
-		RUNNER_OS="MacOS"
+		RUNNER_OS="macOS"
 		PLATFORM="osx"
 	else
 		echo Failed to autodetect platform... >&2
