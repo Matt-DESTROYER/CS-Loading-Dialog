@@ -20,7 +20,7 @@ elif [[ $arch == arm* ]]; then
 fi
 echo Architecture detected: $ARCH
 
-echo Building...
+echo Building all...
 dotnet publish --os $PLATFORM --arch $ARCH -c Release --disable-build-servers --output ../build/$RUNNER_OS-$ARCH
 rm -rf bin
 rm -rf obj
