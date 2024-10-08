@@ -5,5 +5,11 @@
     <TargetFramework>net8.0</TargetFramework>
     <PublishAot>true</PublishAot>
   </PropertyGroup>
+  
+  <!-- Don't include debug content (`.pbd`) for Release builds -->
+  <PropertyGroup Condition="'$(Configuration)'=='Release'">
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>None</DebugType>
+  </PropertyGroup>
 
 </Project>
