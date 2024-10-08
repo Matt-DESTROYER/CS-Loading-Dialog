@@ -88,11 +88,10 @@ class Program {
 }
 ```
 
-## Compatibility
- - `LoadingDialog` is compatibile with C# 5+.
-
 ## Building the demo yourself
- - The demo can be built with `csc` (which comes with the .NET Framework and Visual Studio).
- - You can find `csc` in `C:\Windows\Microsoft.NET\Framework\<version>`, either add this to your `PATH` environment variable or call `csc` using the full path.
- - Just set the target to `exe` and include the C# files: `csc /t:exe main.cs LoadingDialogs.cs`
+ - The demo can be built with [`dotnet`](https://dotnet.microsoft.com/en-us/download).
+ - Once installed, simply enter the `/src` directory and run the `build` or `publish` commands, specifying the `demo.csproj` file.
+	 - Example 1 (Windows with 64-bit architecture): `dotnet publish demo.csproj -r win-x64 -c Release --output ../build`
+	 - Example 2 (Linux with 32-bit architecture): `dotnet publish demo.csproj -r linux-x86 -c Release --output ../build`
+	 - See more on command line arguments [here](https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-publish#arguments).
  - Run the compiled executable.
