@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LoadingDialogs")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+91a0b2fc099c94404504c8152d345490ccf29664")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6c8d78a892345a01f4de6f5eb45739cb5c4190b9")]
 [assembly: System.Reflection.AssemblyProductAttribute("LoadingDialogs")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LoadingDialogs")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
