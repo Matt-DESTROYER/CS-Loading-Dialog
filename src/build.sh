@@ -8,7 +8,7 @@ BUILD_ARCHS=("x86" "x64" "arm" "arm64")
 
 # build
 rm -rf ../build
-mkdir ../build
+
 for i in "${!BUILD_PLATFORMS[@]}"; do
 	RUNNER_OS=${OS_NAMES[$i]}
 	PLATFORM=${BUILD_PLATFORMS[$i]}
@@ -19,10 +19,10 @@ for i in "${!BUILD_PLATFORMS[@]}"; do
 		echo Building for $RUNNER_OS $ARCH...
 
 		echo Building library...
-		dotnet publish LoadingDialogs.csproj --os $PLATFORM --arch $ARCH -c Release --output ../build/$RUNNER_OS-$ARCH/library
+		dotnet publish LoadingDialogs.csproj --os $PLATFORM --arch $ARCH -c Release --output ../build/$RUNNER_OS/$ARCH/library
 
 		echo Building demo...
-		dotnet publish demo.csproj --os $PLATFORM --arch $ARCH -c Release --output ../build/$RUNNER_OS-$ARCH/demo
+		dotnet publish demo.csproj --os $PLATFORM --arch $ARCH -c Release --output ../build/$RUNNER_OS/$ARCH/demo
 
 		rm -rf bin
 		rm -rf obj
