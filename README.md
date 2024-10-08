@@ -91,7 +91,7 @@ class Program {
 ## Building the demo yourself
  - The demo can be built with [`dotnet`](https://dotnet.microsoft.com/en-us/download).
  - Once installed, simply enter the `/src` directory and run the `build` or `publish` commands, specifying the `demo.csproj` file.
-	 - Example 1 (Windows with 64-bit architecture): `dotnet publish demo.csproj -r win-x64 -c Release --output ../build`
-	 - Example 2 (Linux with 32-bit architecture): `dotnet publish demo.csproj -r linux-x86 -c Release --output ../build`
+	 - Example 1 (Windows with 64-bit architecture in Release mode): `dotnet publish demo.csproj -r win-x64 -c Release --output ../build`
+	 - Example 2 (Linux with 32-bit architecture in Debug mode): `dotnet publish demo.csproj -r linux-x86 -c Debug --output ../build`
 	 - See more on command line arguments [here](https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-publish#arguments).
  - Run the compiled executable.
