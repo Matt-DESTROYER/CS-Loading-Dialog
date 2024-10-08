@@ -49,7 +49,7 @@ jobs:
 
       - name: Build
         run: bash build.sh
-        with:
+        env:
           ARCH: ${{ matrix.arch }}
 
       - name: Push build
