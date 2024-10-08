@@ -1,0 +1,1 @@
+/home/runner/work/CS-Loading-Dialog/CS-Loading-Dialog/build/Linux/x64/demo/demo
