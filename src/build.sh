@@ -20,8 +20,8 @@ for i in "${!BUILD_PLATFORMS[@]}"; do
 
 		dotnet publish LoadingDialogs.csproj --os $PLATFORM --arch $ARCH -c Release --output ../build/$RUNNER_OS/$ARCH/library
 
-		rm -rf bin
-		rm -rf obj
+		rm -rf ./bin
+		rm -rf ./obj
 	done
 done
 

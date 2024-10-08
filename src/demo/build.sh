@@ -3,6 +3,7 @@
 # MUST BE RUN FROM ./src/demo
 
 # detect OS
+echo RUNNER_OS\=$RUNNER_OS
 if [[ $RUNNER_OS == "Windows" ]]; then
     PLATFORM="win"
 elif [[ $RUNNER_OS == "Linux" ]]; then
@@ -17,6 +18,9 @@ else
 	elif [[ $OSTYPE == "msys" || $OSTYPE == "cygwin" ]]; then
 		RUNNER_OS="Windows"
 		PLATFORM="win"
+	elif [[ $OSTYPE == "darwin" ]]; then
+		RUNNER_OS="MacOS"
+		PLATFORM="osx"
 	else
 		echo Failed to autodetect platform... >&2
 		exit 1
@@ -45,3 +49,5 @@ cp ../LoadingDialogs.cs ./
 dotnet publish demo.csproj --os $PLATFORM --arch $ARCH -c Release --output ../../build/$RUNNER_OS/$ARCH/demo
 
 rm ./LoadingDialogs.cs
+rm -rf ./bin
+rm -rf ./obj
