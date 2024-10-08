@@ -24,3 +24,4 @@ if [ ! -d "../build" ]; then
 fi
 
 dotnet publish --os $PLATFORM --arch $ARCH -c Release --disable-build-servers --output ../build
+dotnet clean
