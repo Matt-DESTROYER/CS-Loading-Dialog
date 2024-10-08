@@ -15,11 +15,11 @@
         }
       }
     },
-    "net8.0/linux-x64": {
+    "net8.0/linux-arm64": {
       "Microsoft.DotNet.ILCompiler/8.0.8": {
         "type": "package",
         "dependencies": {
-          "runtime.linux-x64.Microsoft.DotNet.ILCompiler": "8.0.8"
+          "runtime.linux-arm64.Microsoft.DotNet.ILCompiler": "8.0.8"
         },
         "build": {
           "build/Microsoft.DotNet.ILCompiler.props": {}
@@ -31,7 +31,7 @@
           "build/Microsoft.NET.ILLink.Tasks.props": {}
         }
       },
-      "runtime.linux-x64.Microsoft.DotNet.ILCompiler/8.0.8": {
+      "runtime.linux-arm64.Microsoft.DotNet.ILCompiler/8.0.8": {
         "type": "package"
       }
     }
@@ -118,10 +118,10 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "runtime.linux-x64.Microsoft.DotNet.ILCompiler/8.0.8": {
-      "sha512": "DP92xh/gVljkGzzfJe1W4XfbLsX5LhEkl+N+As3AYK93jz4zMHHywUL/iP5jMvNmCeHTHoCIePha7qDgZmd4rA==",
+    "runtime.linux-arm64.Microsoft.DotNet.ILCompiler/8.0.8": {
+      "sha512": "WkBmb8muFtzcAEG2NeoMBCsMS/a/fbZHkhJ9TuIS5wDcPBRCB2lEHHaZb1UPSgG+UXpTfFycbHgRmYysGUHfVA==",
       "type": "package",
-      "path": "runtime.linux-x64.microsoft.dotnet.ilcompiler/8.0.8",
+      "path": "runtime.linux-arm64.microsoft.dotnet.ilcompiler/8.0.8",
       "hasTools": true,
       "files": [
         ".nupkg.metadata",
@@ -621,8 +621,8 @@
         "native/src/minipal/utf8.c",
         "native/src/minipal/utf8.h",
         "native/src/minipal/utils.h",
-        "runtime.linux-x64.microsoft.dotnet.ilcompiler.8.0.8.nupkg.sha512",
-        "runtime.linux-x64.microsoft.dotnet.ilcompiler.nuspec",
+        "runtime.linux-arm64.microsoft.dotnet.ilcompiler.8.0.8.nupkg.sha512",
+        "runtime.linux-arm64.microsoft.dotnet.ilcompiler.nuspec",
         "sdk/System.Private.CoreLib.dll",
         "sdk/System.Private.CoreLib.pdb",
         "sdk/System.Private.CoreLib.xml",
@@ -654,12 +654,12 @@
         "tools/ilc.dbg",
         "tools/libc++.so.1",
         "tools/libc++abi.so.1",
-        "tools/libclrjit_universal_arm64_x64.so",
-        "tools/libclrjit_universal_arm_x64.so",
-        "tools/libclrjit_unix_x64_x64.so",
-        "tools/libclrjit_win_x64_x64.so",
-        "tools/libclrjit_win_x86_x64.so",
-        "tools/libjitinterface_x64.so",
+        "tools/libclrjit_universal_arm64_arm64.so",
+        "tools/libclrjit_universal_arm_arm64.so",
+        "tools/libclrjit_unix_x64_arm64.so",
+        "tools/libclrjit_win_x64_arm64.so",
+        "tools/libclrjit_win_x86_arm64.so",
+        "tools/libjitinterface_arm64.so",
         "tools/libobjwriter.so",
         "tools/netstandard/ILCompiler.Build.Tasks.deps.json",
         "tools/netstandard/ILCompiler.Build.Tasks.dll",
@@ -741,11 +741,15 @@
         "warn": true,
         "downloadDependencies": [
           {
-            "name": "Microsoft.AspNetCore.App.Runtime.linux-x64",
+            "name": "Microsoft.AspNetCore.App.Runtime.linux-arm64",
             "version": "[8.0.8, 8.0.8]"
           },
           {
-            "name": "Microsoft.NETCore.App.Runtime.linux-x64",
+            "name": "Microsoft.NETCore.App.Host.linux-arm64",
+            "version": "[8.0.8, 8.0.8]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Runtime.linux-arm64",
             "version": "[8.0.8, 8.0.8]"
           },
           {
@@ -762,7 +766,7 @@
       }
     },
     "runtimes": {
-      "linux-x64": {
+      "linux-arm64": {
         "#import": []
       }
     }
