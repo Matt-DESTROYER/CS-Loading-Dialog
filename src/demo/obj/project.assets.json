@@ -15,11 +15,11 @@
         }
       }
     },
-    "net8.0/win-x64": {
+    "net8.0/win-arm64": {
       "Microsoft.DotNet.ILCompiler/8.0.8": {
         "type": "package",
         "dependencies": {
-          "runtime.win-x64.Microsoft.DotNet.ILCompiler": "8.0.8"
+          "runtime.win-arm64.Microsoft.DotNet.ILCompiler": "8.0.8"
         },
         "build": {
           "build/Microsoft.DotNet.ILCompiler.props": {}
@@ -31,7 +31,7 @@
           "build/Microsoft.NET.ILLink.Tasks.props": {}
         }
       },
-      "runtime.win-x64.Microsoft.DotNet.ILCompiler/8.0.8": {
+      "runtime.win-arm64.Microsoft.DotNet.ILCompiler/8.0.8": {
         "type": "package"
       }
     }
@@ -118,10 +118,10 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "runtime.win-x64.Microsoft.DotNet.ILCompiler/8.0.8": {
-      "sha512": "nbk0rvMYX+0BH71ucX45JIEdskCCtF1d/SBcmg/Pxpi/DFKCdX5voBlfwYtc0RRVvyr+MWQ/B2dB3s1Cr/l5/w==",
+    "runtime.win-arm64.Microsoft.DotNet.ILCompiler/8.0.8": {
+      "sha512": "5lbm1jo5kpp7shNWy7drWpiit9s2LZDa9q+i9PwCZhrA68s/GYJvUcxLgzTy8+/KCLtK4ur7JQRP/31rT27OWQ==",
       "type": "package",
-      "path": "runtime.win-x64.microsoft.dotnet.ilcompiler/8.0.8",
+      "path": "runtime.win-arm64.microsoft.dotnet.ilcompiler/8.0.8",
       "hasTools": true,
       "files": [
         ".nupkg.metadata",
@@ -484,18 +484,12 @@
         "mibc/DotNet_HelloWorld.mibc",
         "mibc/DotNet_OrchardCore.mibc",
         "mibc/DotNet_TechEmpower.mibc",
-        "runtime.win-x64.microsoft.dotnet.ilcompiler.8.0.8.nupkg.sha512",
-        "runtime.win-x64.microsoft.dotnet.ilcompiler.nuspec",
+        "runtime.win-arm64.microsoft.dotnet.ilcompiler.8.0.8.nupkg.sha512",
+        "runtime.win-arm64.microsoft.dotnet.ilcompiler.nuspec",
         "sdk/Runtime.ServerGC.GuardCF.lib",
         "sdk/Runtime.ServerGC.GuardCF.pdb",
         "sdk/Runtime.ServerGC.lib",
         "sdk/Runtime.ServerGC.pdb",
-        "sdk/Runtime.VxsortDisabled.lib",
-        "sdk/Runtime.VxsortDisabled.pdb",
-        "sdk/Runtime.VxsortEnabled.GuardCF.lib",
-        "sdk/Runtime.VxsortEnabled.GuardCF.pdb",
-        "sdk/Runtime.VxsortEnabled.lib",
-        "sdk/Runtime.VxsortEnabled.pdb",
         "sdk/Runtime.WorkstationGC.lib",
         "sdk/Runtime.WorkstationGC.pdb",
         "sdk/System.Globalization.Native.Aot.GuardCF.lib",
@@ -542,14 +536,14 @@
         "tools/ILCompiler.MetadataTransform.pdb",
         "tools/ILCompiler.RyuJit.pdb",
         "tools/ILCompiler.TypeSystem.pdb",
-        "tools/clrjit_universal_arm64_x64.dll",
-        "tools/clrjit_universal_arm_x64.dll",
-        "tools/clrjit_unix_x64_x64.dll",
-        "tools/clrjit_win_x64_x64.dll",
-        "tools/clrjit_win_x86_x64.dll",
+        "tools/clrjit_universal_arm64_arm64.dll",
+        "tools/clrjit_universal_arm_arm64.dll",
+        "tools/clrjit_unix_x64_arm64.dll",
+        "tools/clrjit_win_x64_arm64.dll",
+        "tools/clrjit_win_x86_arm64.dll",
         "tools/ilc.exe",
         "tools/ilc.pdb",
-        "tools/jitinterface_x64.dll",
+        "tools/jitinterface_arm64.dll",
         "tools/netstandard/ILCompiler.Build.Tasks.deps.json",
         "tools/netstandard/ILCompiler.Build.Tasks.dll",
         "tools/netstandard/ILCompiler.Build.Tasks.pdb",
@@ -639,15 +633,15 @@
         "warn": true,
         "downloadDependencies": [
           {
-            "name": "Microsoft.AspNetCore.App.Runtime.win-x64",
+            "name": "Microsoft.AspNetCore.App.Runtime.win-arm64",
             "version": "[8.0.8, 8.0.8]"
           },
           {
-            "name": "Microsoft.NETCore.App.Runtime.win-x64",
+            "name": "Microsoft.NETCore.App.Runtime.win-arm64",
             "version": "[8.0.8, 8.0.8]"
           },
           {
-            "name": "Microsoft.WindowsDesktop.App.Runtime.win-x64",
+            "name": "Microsoft.WindowsDesktop.App.Runtime.win-arm64",
             "version": "[8.0.8, 8.0.8]"
           },
           {
@@ -664,7 +658,7 @@
       }
     },
     "runtimes": {
-      "win-x64": {
+      "win-arm64": {
         "#import": []
       }
     }

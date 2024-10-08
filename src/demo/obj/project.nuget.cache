@@ -1,15 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "Ft1gC1eg7E8=",
+  "dgSpecHash": "/lG35f4mtug=",
   "success": true,
   "projectFilePath": "D:\\a\\CS-Loading-Dialog\\CS-Loading-Dialog\\src\\demo\\demo.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\runneradmin\\.nuget\\packages\\microsoft.dotnet.ilcompiler\\8.0.8\\microsoft.dotnet.ilcompiler.8.0.8.nupkg.sha512",
     "C:\\Users\\runneradmin\\.nuget\\packages\\microsoft.net.illink.tasks\\8.0.8\\microsoft.net.illink.tasks.8.0.8.nupkg.sha512",
-    "C:\\Users\\runneradmin\\.nuget\\packages\\runtime.win-x64.microsoft.dotnet.ilcompiler\\8.0.8\\runtime.win-x64.microsoft.dotnet.ilcompiler.8.0.8.nupkg.sha512",
-    "C:\\Users\\runneradmin\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\8.0.8\\microsoft.netcore.app.runtime.win-x64.8.0.8.nupkg.sha512",
-    "C:\\Users\\runneradmin\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\8.0.8\\microsoft.windowsdesktop.app.runtime.win-x64.8.0.8.nupkg.sha512",
-    "C:\\Users\\runneradmin\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\8.0.8\\microsoft.aspnetcore.app.runtime.win-x64.8.0.8.nupkg.sha512",
+    "C:\\Users\\runneradmin\\.nuget\\packages\\runtime.win-arm64.microsoft.dotnet.ilcompiler\\8.0.8\\runtime.win-arm64.microsoft.dotnet.ilcompiler.8.0.8.nupkg.sha512",
+    "C:\\Users\\runneradmin\\.nuget\\packages\\microsoft.netcore.app.runtime.win-arm64\\8.0.8\\microsoft.netcore.app.runtime.win-arm64.8.0.8.nupkg.sha512",
+    "C:\\Users\\runneradmin\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-arm64\\8.0.8\\microsoft.windowsdesktop.app.runtime.win-arm64.8.0.8.nupkg.sha512",
+    "C:\\Users\\runneradmin\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-arm64\\8.0.8\\microsoft.aspnetcore.app.runtime.win-arm64.8.0.8.nupkg.sha512",
     "C:\\Users\\runneradmin\\.nuget\\packages\\runtime.win-x64.microsoft.dotnet.ilcompiler\\8.0.8\\runtime.win-x64.microsoft.dotnet.ilcompiler.8.0.8.nupkg.sha512"
   ],
   "logs": []
