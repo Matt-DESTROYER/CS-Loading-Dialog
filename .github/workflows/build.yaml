@@ -11,16 +11,46 @@ defaults:
     working-directory: ./src
 
 jobs:
-  Build:
+  Build-libraries:
     runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v4
     - uses: actions/setup-dotnet@v4.0.1
-            
 
     - name: Build
       run: bash build.sh
+
+    - name: Push build
+      run: |
+        git pull
+        git config --local user.email "action@github.com"
+        git config --local user.name "github-actions"
+        git add --all
+        git commit -m "Build output" -a
+        git push origin main
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    Build-demos:
+      runs-on: ${{ matrix.os }}
+
+      strategy:
+        fail-fast: false
+        max-parallel: 1
+
+        matrix:
+          os: [windows-latest, ubuntu-latest, macos-latest]
+          arch: [x86, x64]
+
+      steps:
+        - uses: actions/checkout@v4
+        - uses: actions/setup-dotnet@v4.0.1
+
+    - name: Build
+      run: bash build.sh
+      with:
+        ARCH: ${{ matrix.arch }}
 
     - name: Push build
       run: |

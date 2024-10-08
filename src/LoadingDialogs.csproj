@@ -4,7 +4,7 @@
     <OutputType>Library</OutputType>
     <TargetFramework>net8.0</TargetFramework>
   </PropertyGroup>
-  
+
   <!-- don't include debug content (`.pbd`) in Release builds -->
   <PropertyGroup Condition="'$(Configuration)'=='Release'">
     <DebugSymbols>False</DebugSymbols>
@@ -13,7 +13,7 @@
 
   <!-- don't include the demo in the library build -->
   <ItemGroup>
-    <Compile Remove="demo.cs" />
+    <Compile Remove="/demo/**" />
   </ItemGroup>
 
 </Project>
