@@ -26,11 +26,11 @@ rm -rf ../build/$RUNNER_OS-$ARCH
 
 echo Building library...
 
-dotnet publish demo.csproj --os $PLATFORM --arch $ARCH -c Release --output ../build/$RUNNER_OS-$ARCH
+dotnet publish LoadingDialogs.csproj --os $PLATFORM --arch $ARCH -c Release --output ../build/$RUNNER_OS-$ARCH
 
 echo Building demo...
 
-dotnet publish LoadingDialogs.csproj --os $PLATFORM --arch $ARCH -c Release --output ../build/$RUNNER_OS-$ARCH
+dotnet publish demo.csproj --os $PLATFORM --arch $ARCH -c Release --output ../build/$RUNNER_OS-$ARCH
 
 rm -rf bin
 rm -rf obj
