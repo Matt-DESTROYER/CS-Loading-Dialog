@@ -6,11 +6,6 @@
     <PublishAot>true</PublishAot>
   </PropertyGroup>
 
-  <!-- include parent directory -->
-  <ItemGroup>
-	<Compile Include="@(Parent)" />
-  </ItemGroup>
-
   <!-- don't include debug content (`.pbd`) in Release builds -->
   <PropertyGroup Condition="'$(Configuration)'=='Release'">
     <DebugSymbols>False</DebugSymbols>

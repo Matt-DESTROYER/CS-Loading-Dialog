@@ -40,4 +40,8 @@ echo Architecture detected: $ARCH
 # build
 rm -rf ../../build/$RUNNER_OS/$ARCH/demo
 
+cp ../LoadingDialogs.cs ./
+
 dotnet publish demo.csproj --os $PLATFORM --arch $ARCH -c Release --output ../../build/$RUNNER_OS/$ARCH/demo
+
+rm ./LoadingDialogs.cs
