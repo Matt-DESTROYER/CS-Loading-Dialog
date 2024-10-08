@@ -21,7 +21,7 @@ fi
 echo Architecture detected: $ARCH
 
 echo Building demo...
-dotnet publish --os $PLATFORM --arch $ARCH -c Release -p ReadyToRun -p SelfContained --output ../build/$RUNNER_OS-$ARCH
+dotnet publish --os $PLATFORM --arch $ARCH -c Release --output ../build/$RUNNER_OS-$ARCH
 rm -rf bin
 rm -rf obj
 echo Build complete.
