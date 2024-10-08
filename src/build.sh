@@ -2,9 +2,9 @@
 
 # MUST BE RUN FROM ./src
 
-OS_NAMES=("Windows", "Linux", "Mac OS")
-BUILD_PLATFORMS=("win", "linux", "osx")
-BUILD_ARCHS=("x86", "x64", "arm", "arm64")
+OS_NAMES=("Windows" "Linux" "Mac OS")
+BUILD_PLATFORMS=("win" "linux" "osx")
+BUILD_ARCHS=("x86" "x64" "arm" "arm64")
 
 # build
 rm -rf ../build
