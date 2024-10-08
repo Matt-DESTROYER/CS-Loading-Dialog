@@ -11,7 +11,7 @@ defaults:
     working-directory: ./src
 
 jobs:
-  Build-libraries:
+  build-libs:
     runs-on: ubuntu-latest
 
     steps:
@@ -32,33 +32,33 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-    Build-demos:
-      runs-on: ${{ matrix.os }}
+  build-demos:
+    runs-on: ${{ matrix.os }}
 
-      strategy:
-        fail-fast: false
-        max-parallel: 1
+    strategy:
+      fail-fast: false
+      max-parallel: 1
 
-        matrix:
-          os: [windows-latest, ubuntu-latest, macos-latest]
-          arch: [x86, x64]
+      matrix:
+        os: [windows-latest, ubuntu-latest, macos-latest]
+        arch: [x86, x64]
 
-      steps:
-        - uses: actions/checkout@v4
-        - uses: actions/setup-dotnet@v4.0.1
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4.0.1
 
-    - name: Build
-      run: bash build.sh
-      with:
-        ARCH: ${{ matrix.arch }}
+      - name: Build
+        run: bash build.sh
+        with:
+          ARCH: ${{ matrix.arch }}
 
-    - name: Push build
-      run: |
-        git pull
-        git config --local user.email "action@github.com"
-        git config --local user.name "github-actions"
-        git add --all
-        git commit -m "Build output" -a
-        git push origin main
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Push build
+        run: |
+          git pull
+          git config --local user.email "action@github.com"
+          git config --local user.name "github-actions"
+          git add --all
+          git commit -m "Build output" -a
+          git push origin main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
