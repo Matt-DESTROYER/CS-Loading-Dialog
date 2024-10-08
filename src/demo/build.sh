@@ -3,12 +3,11 @@
 # MUST BE RUN FROM ./src/demo
 
 # detect OS
-echo RUNNER_OS\=$RUNNER_OS
 if [[ $RUNNER_OS == "Windows" ]]; then
     PLATFORM="win"
 elif [[ $RUNNER_OS == "Linux" ]]; then
     PLATFORM="linux"
-elif [[ $RUNNER_OS == "MacOS" ]]; then
+elif [[ $RUNNER_OS == "macOS" ]]; then
 	PLATFORM="osx"
 else
 	echo Environment variable RUNNER_OS not specified...

@@ -34,6 +34,9 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   build-demos:
+    if: ${{ always() }}
+    needs: build-libs
+
     runs-on: ${{ matrix.os }}
 
     strategy:
