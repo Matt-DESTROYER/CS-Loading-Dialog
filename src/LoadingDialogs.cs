@@ -80,7 +80,7 @@ namespace LoadingDialogs {
 
 			// calculate the current progress
 			float progressPercentage = (float)this.Progress / this.TotalProgress;
-			int completedWidth = (int)Math.Floor(progressPercentage * barWidth);
+			int completedWidth = (int)Math.Floor(progressPercentage * this.BarWidth);
 			int remainingWidth = this.BarWidth - completedWidth;
 
 			// write the current progress
