@@ -18,15 +18,14 @@ jobs:
     - name: Initialise git
       run: |
         git pull
-        git config --local user.email "action@github.com"
-        git config --local user.name "github-actions"
 
     - name: Build
       run: bash build.sh
 
     - name: Push build
       run: |
-        git pull
+        git config --local user.email "action@github.com"
+        git config --local user.name "github-actions"
         git add --all
         git commit -m "Build output" -a
         git push
@@ -34,7 +33,6 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   build-demos:
-    if: ${{ always() }}
     needs: build-libs
 
     runs-on: ${{ matrix.os }}
@@ -54,8 +52,6 @@ jobs:
       - name: Initialise git
         run: |
           git pull
-          git config --local user.email "action@github.com"
-          git config --local user.name "github-actions"
 
       - name: Build
         run: |
@@ -66,7 +62,8 @@ jobs:
 
       - name: Push build
         run: |
-          git pull
+          git config --local user.email "action@github.com"
+          git config --local user.name "github-actions"
           git add --all
           git commit -m "Build output" -a
           git push origin main
