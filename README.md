@@ -1,3 +1,5 @@
+[![Build](https://github.com/Matt-DESTROYER/CS-Loading-Dialog/actions/workflows/build.yaml/badge.svg)](https://github.com/Matt-DESTROYER/CS-Loading-Dialog/actions/workflows/build.yaml)
+
 # C# Console Loading Dialog
 
 ## How do I use this?
