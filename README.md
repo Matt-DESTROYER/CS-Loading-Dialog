@@ -16,12 +16,12 @@ LoadingDialog myLoadingBar = LoadingDialog(string message = "Loading...", int to
 
 #### Properties:
 ```cs
-public string message;
-public int progress = 0;
-public int totalProgress;
-public int barWidth;
-public ConsoleColor completeColour = ConsoleColor.Green;
-public ConsoleColor incompleteColour = ConsoleColor.Gray;
+public string Message;
+public int Progress = 0;
+public int TotalProgress;
+public int BarWidth;
+public ConsoleColor CompleteColour = ConsoleColor.Green;
+public ConsoleColor IncompleteColour = ConsoleColor.Gray;
 ```
  - `Message`: The description of your loading bar.
  - `Progress`: The current progress of the loading bar.
