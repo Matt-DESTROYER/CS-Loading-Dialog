@@ -88,6 +88,63 @@ class Program {
 }
 ```
 
+## Advanced usage
+
+### Customising colours
+
+You can customise the colours of the loading bar to match your application's theme:
+```cs
+loadingDlg.CompleteColour   = ConsoleColor.Blue;
+loadingDlg.IncompleteColour = ConsoleColor.Red;
+```
+
+### Update progress from multiple threads
+
+If you are performing tasks in parallel, you can safely update the progress from multiple threads:
+
+```cs
+using System.Threading.Tasks;
+
+LoadingDialog loadingDlg = new LoadingDialog("Parallel tasks loading:", 100, 20);
+loadingDlg.Start();
+
+// Example with parallel tasks
+Parallel.For(0, 100, i => {
+	// Simulate work
+	Thread.Sleep(100);
+	lock (loadingDlg) {
+		loadingDlg.IncrementProgress();
+	}
+});
+```
+
+### File download progress
+
+You can use the loading dialog to show file download progress:
+
+```cs
+using System.Net.Http;
+
+LoadingDialog downloadProgress = new LoadingDialog("Downloading file:", 100, 20);
+downloadProgress.Start();
+
+HttpClient client = new HttpClient();
+HttpResponseMessage response = await client.GetAsync("http://example.com/file", HttpCompletionOption.ResponseHeadersRead);
+var totalBytes = response.Content.Headers.ContentLength ?? 1L;
+
+using (var stream = await response.Content.ReadAsStreamAsync())
+using (var fileStream = new FileStream("file", FileMode.Create, FileAccess.Write, FileShare.None, 8192, true)) {
+	var buffer = new byte[8192];
+	long totalRead = 0L;
+	int bytesRead;
+	while ((bytesRead = await stream.ReadAsync(buffer, 0, buffer.Length)) > 0) {
+		await fileStream.WriteAsync(buffer, 0, bytesRead);
+		totalRead += bytesRead;
+		downloadProgress.SetProgress((int)(totalRead * 100 / totalBytes));
+	}
+}
+```
+
 ## Building the demo yourself
  - The demo can be built with [`dotnet`](https://dotnet.microsoft.com/en-us/download).
  - Once installed, simply enter the `/src` directory and run the `build` or `publish` commands, specifying the `demo.csproj` file.
