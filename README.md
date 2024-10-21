@@ -10,9 +10,9 @@ Just download the `LoadingDialogs.cs` file and include the `LoadingDialog` names
 LoadingDialog myLoadingBar = LoadingDialog(string message = "Loading...", int totalProgress = 10, int barWidth = 20);
 ```
 #### Parameters:
- - `message`: The description of your loading bar (this will be displayed above the loading bar).
- - `totalProgress`: How many tasks or items are being completed (this will be used to calculate a percentage based on current progress).
- - `barWidth`: The width of the loading bar in characters.
+ - `Message`: The description of your loading bar (this will be displayed above the loading bar).
+ - `TotalProgress`: How many tasks or items are being completed (this will be used to calculate a percentage based on current progress).
+ - `BarWidth`: The width of the loading bar in characters.
 
 #### Properties:
 ```cs
@@ -23,12 +23,12 @@ public int barWidth;
 public ConsoleColor completeColour = ConsoleColor.Green;
 public ConsoleColor incompleteColour = ConsoleColor.Gray;
 ```
- - `message`: The description of your loading bar.
- - `progress`: The current progress of the loading bar.
- - `totalProgress`: How many tasks or items are being completed.
- - `barWidth`: The width of the loading bar in characters.
- - `completeColor`: The colour of the complete section of the loading bar.
- - `incompleteColor`: The colour of the incomplete section of the loading bar.
+ - `Message`: The description of your loading bar.
+ - `Progress`: The current progress of the loading bar.
+ - `TotalProgress`: How many tasks or items are being completed.
+ - `BarWidth`: The width of the loading bar in characters.
+ - `CompleteColor`: The colour of the complete section of the loading bar.
+ - `IncompleteColor`: The colour of the incomplete section of the loading bar.
 
 #### Methods:
 ```cs
