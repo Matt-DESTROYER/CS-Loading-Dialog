@@ -45,10 +45,10 @@ jobs:
         os: [windows-latest, ubuntu-latest, macos-latest]
         # AOT only seems to support 64 bit archs
         # ubuntu-latest, arm64 is not supported...
-        arch: [x64, arm64]
-        exclude:
-          - os: ubuntu-latest
-            arch: arm64
+        arch: [x32, x64, arm, arm64]
+        #exclude:
+          #- os: ubuntu-latest
+            #arch: arm64
 
     steps:
       - uses: actions/checkout@v4
