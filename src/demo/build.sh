@@ -30,12 +30,14 @@ echo Platform detected: $RUNNER_OS
 # detect architecture
 if [[ -z "${ARCH}" ]]; then
 	ARCH=$(uname -m)
-	if [[ $ARCH == x86_64* ]]; then
+	if [[ $ARCH == "x64" || $ARCH == "x86_64" || $ARCH == "amd64" ]]; then
 		ARCH="x64"
-	elif [[ $ARCH == i*86 ]]; then
+	elif [[ $ARCH == "x32" || $ARCH == "i686" || $ARCH == "amd" ]]; then
 		ARCH="x86"
-	elif [[ $arch == arm* ]]; then
+	elif [[ $ARCH == "arm" ]]; then
 		ARCH="arm"
+  	elif [[ $ARCH == "arm64" ]]; then
+   		ARCH="arm64"
 	fi
 fi
 echo Architecture detected: $ARCH
